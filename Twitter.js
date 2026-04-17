@@ -42,6 +42,17 @@ app.delete("/posts/:id", (req, res) => {
     }
 });
 
+// Post a new post
+app.post("/posts", (req, res) => {
+    const post = {
+        title: req.body.title,
+        content: req.body.content
+    };
+    posts.push(post);
+    res.status(201).json(post);
+});
+
+
 // Get all comments for a post by ID
 app.get("/posts/:id/comments", (req, res) => {
     const postId = parseInt(req.params.id);
