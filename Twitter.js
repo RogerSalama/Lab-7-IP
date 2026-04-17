@@ -45,6 +45,7 @@ app.delete("/posts/:id", (req, res) => {
 // Post a new post
 app.post("/posts", (req, res) => {
     const post = {
+        id: posts.length + 1,
         title: req.body.title,
         content: req.body.content
     };
